@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const BookProductSchema = new Schema({
     name: String,
@@ -13,4 +13,4 @@ const BookProductSchema = new Schema({
     create_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('bookProducts', BookProductSchema);
+export default mongoose.model('bookProducts', BookProductSchema);

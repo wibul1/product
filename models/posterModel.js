@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-const Poster = new Schema({
+const PosterSchema = new Schema({
     name: String,
     img: String,
-    status:String,
+    status: String,
     create_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('posters', Poster);
+export default mongoose.model('posters', PosterSchema);

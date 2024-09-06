@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const AutenSchema = new Schema({
     email: String,
@@ -17,4 +17,4 @@ const UserSchema = new Schema({
     create_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('users', UserSchema);
+export default mongoose.model('users', UserSchema);
