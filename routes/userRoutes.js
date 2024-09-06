@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const { query, body } = require('express-validator');
+import { Router } from 'express'; // เปลี่ยนเป็น import
+import { query, body } from 'express-validator';
 
-const controller = require('../controllers/userController');
+import * as controller from '../controllers/userController';
 // const { validation } = require('../middlewares/validationMiddleware');
-
+const router = Router();
 
 
 router.post('/registerUser', [

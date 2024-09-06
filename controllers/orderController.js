@@ -1,5 +1,5 @@
-const BookProduct = require('../models/bookProductModel'); // ใช้ชื่อโมเดลให้ถูกต้อง
-const BookOrder = require('../models/bookOrderModel'); // ใช้ชื่อโมเดลให้ถูกต้อง
+import BookProduct from '../models/bookProductModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import BookOrder from '../models/bookOrderModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
 
 exports.createOrder = async (req, res, next) => {

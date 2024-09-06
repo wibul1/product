@@ -1,8 +1,9 @@
-const router = require('express').Router();
-const { query, body } = require('express-validator');
+import { Router } from 'express'; // เปลี่ยนเป็น import
+import { query, body } from 'express-validator';
 
-const controller = require('../controllers/paymentController');
+import * as controller from '../controllers/paymentController';
 // const { validation } = require('../middlewares/validationMiddleware');
+const router = Router();
 
 router.post('/createPayment', [
     body('userId').notEmpty(),

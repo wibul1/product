@@ -1,12 +1,15 @@
-const mongoose = require('mongoose');
-const {MONGO_URI} = process.env;
+import mongoose from 'mongoose';
 
-exports.connectToDb = async () => {
+const { MONGO_URI } = process.env;
+
+export const connectToDb = async () => {
+  try {
     await mongoose.connect(MONGO_URI, {
-    })
-    .then(() => {
-        console.log('Connected to MongoDB');
-    }).catch((error) => {
-        console.error('Error connecting to MongoDB:', error.message);
+      useNewUrlParser: true, 
+      useUnifiedTopology: true,
     });
-}
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error.message);
+  }
+};

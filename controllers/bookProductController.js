@@ -1,6 +1,6 @@
-const BookProduct = require('../models/bookProductModel'); // ใช้ชื่อโมเดลให้ถูกต้อง
-const Poster = require('../models/posterModel'); // ใช้ชื่อโมเดลให้ถูกต้อง
-const {normalizeInput , scoring} =require('../helpers/helper')
+import BookProduct  from '../models/bookProductModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import Poster  from '../models/posterModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import {normalizeInput , scoring}  from '../helpers/helper'
 
 // ฟังก์ชันสำหรับการดึงข้อมูลสินค้า
 exports.product = async (req, res, next) => {

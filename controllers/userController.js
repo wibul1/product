@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../models/userModel'); // ใช้ชื่อโมเดลให้ถูกต้อง
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import User from '../models/userModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
 exports.registerUser = async (req, res, next) => {
     try {
