@@ -1,4 +1,4 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import speedInsights from '@vercel/speed-insights';
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
