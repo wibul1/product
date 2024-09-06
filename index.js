@@ -1,5 +1,6 @@
-const speedInsights = require('@vercel/speed-insights');
-const express = require('express');
+import express from 'express';
+import speedInsights from '@vercel/speed-insights';
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
