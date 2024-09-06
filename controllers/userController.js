@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
-exports.registerUser = async (req, res, next) => {
+export const registerUser = async (req, res, next) => {
     try {
         const { name, img, address, phoneNumber, email, password } = req.body;
 
@@ -43,7 +43,7 @@ exports.registerUser = async (req, res, next) => {
     }
 }
 
-exports.loginUser = async (req, res, next) => {
+export const loginUser = async (req, res, next) => {
     try {
         const { email, password } = req.body;
 

@@ -2,7 +2,7 @@ import Payment from '../models/paymentModel'; // ใช้ชื่อโมเ�
 import Order from '../models/bookOrderModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
 // const {processPayment } = require('../helpers/helper')
 
-exports.createPayment = async (req, res, next) => {
+export const createPayment = async (req, res, next) => {
     try {
         const { userId, orderId, paymentMethod , amount} = req.body;
         // console.log(orderId);
@@ -45,7 +45,7 @@ exports.createPayment = async (req, res, next) => {
 }
 
 
-exports.paymentsDetail = async (req, res, next) => {
+export const paymentsDetail = async (req, res, next) => {
     try {
         const { paymentId } = req.query;
 
@@ -68,7 +68,7 @@ exports.paymentsDetail = async (req, res, next) => {
     }
 }
 
-exports.completePayment = async (req, res, next) => {
+export const completePayment = async (req, res, next) => {
     try {
         const { paymentId } = req.body;
 

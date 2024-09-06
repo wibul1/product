@@ -2,7 +2,7 @@ import BookProduct from '../models/bookProductModel'; // ใช้ชื่อ�
 import BookOrder from '../models/bookOrderModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
 
-exports.createOrder = async (req, res, next) => {
+export const createOrder = async (req, res, next) => {
     try {
         const { userId, productId, quantity } = req.body;
 
@@ -42,7 +42,7 @@ exports.createOrder = async (req, res, next) => {
     }
 }
 
-exports.getOrdersByUser = async (req, res, next) => {
+export const getOrdersByUser = async (req, res, next) => {
     try {
         const { userId , status } = req.query;
 
@@ -65,7 +65,7 @@ exports.getOrdersByUser = async (req, res, next) => {
     }
 }
 
-exports.deleteOrder = async (req, res, next) => {
+export const deleteOrder = async (req, res, next) => {
     try {
         const { idorder } = req.body;
         

@@ -3,7 +3,7 @@ import Poster  from '../models/posterModel'; // ใช้ชื่อโมเ�
 import {normalizeInput , scoring}  from '../helpers/helper'
 
 // ฟังก์ชันสำหรับการดึงข้อมูลสินค้า
-exports.product = async (req, res, next) => {
+export const product = async (req, res, next) => {
     try {
         const { id } = req.query;
         
@@ -26,7 +26,7 @@ exports.product = async (req, res, next) => {
     }
 }
 
-exports.productbook = async (req, res, next) => {
+export const productbook = async (req, res, next) => {
     try {
         const { category } = req.query;
         
@@ -52,7 +52,7 @@ exports.productbook = async (req, res, next) => {
 }
 
 // ฟังก์ชันสำหรับการเพิ่มข้อมูลสินค้า
-exports.putproduct = async (req, res, next) => {
+export const putproduct = async (req, res, next) => {
     try {
         const { name, img, author, format, book_depository_stars, price, old_price, category } = req.body;
         
@@ -84,7 +84,7 @@ exports.putproduct = async (req, res, next) => {
     }
 }
 
-exports.carousel = async (req, res, next) => {
+export const carousel = async (req, res, next) => {
     try {
         
         const status = "1";
@@ -112,7 +112,7 @@ exports.carousel = async (req, res, next) => {
 }
 
 
-exports.postCarousel = async (req, res, next) => {
+export const postCarousel = async (req, res, next) => {
     try {
         const { name, img } = req.body;
 
@@ -148,7 +148,7 @@ exports.postCarousel = async (req, res, next) => {
     }
 }
 
-exports.searchbook = async (req, res, next) => {
+export const searchbook = async (req, res, next) => {
     try {
         let { namebook } = req.query;
 
@@ -190,7 +190,7 @@ exports.searchbook = async (req, res, next) => {
     }
 }
 
-exports.highestScore = async (req, res, next) => {
+export const highestScore = async (req, res, next) => {
     try {
         // ตรวจสอบเดือนปัจจุบัน
         const currentMonth = new Date().getMonth() + 1; // getMonth() ให้ผลลัพธ์เป็น 0-11, ต้องบวก 1
@@ -212,7 +212,7 @@ exports.highestScore = async (req, res, next) => {
     }
 }
 
-exports.newBook = async (req, res, next) => {
+export const newBook = async (req, res, next) => {
     try {
         // ตรวจสอบเดือนปัจจุบัน
         const currentMonth = new Date().getMonth() + 1; // getMonth() ให้ผลลัพธ์เป็น 0-11, ต้องบวก 1
@@ -235,7 +235,7 @@ exports.newBook = async (req, res, next) => {
     }
 }
 
-exports.newBookAll = async (req, res, next) => {
+export const newBookAll = async (req, res, next) => {
     try {
         // ตรวจสอบเดือนปัจจุบัน
         const currentMonth = new Date().getMonth() + 1; // getMonth() ให้ผลลัพธ์เป็น 0-11, ต้องบวก 1
