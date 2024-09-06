@@ -1,5 +1,5 @@
-import BookProduct from '../models/bookProductModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
-import BookOrder from '../models/bookOrderModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import BookProduct from '../models/bookProductModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import BookOrder from '../models/bookOrderModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
 
 export const createOrder = async (req, res, next) => {

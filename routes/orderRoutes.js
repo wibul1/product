@@ -1,7 +1,7 @@
 import { Router } from 'express'; // เปลี่ยนเป็น import
 import { query, body } from 'express-validator';
 
-import * as controller from '../controllers/orderController';
+import * as controller from '../controllers/orderController.js';
 // const { validation } = require('../middlewares/validationMiddleware');
 const router = Router();
 

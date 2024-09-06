@@ -1,6 +1,6 @@
 import BookProduct  from '../models/bookProductModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
 import Poster  from '../models/posterModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
-import {normalizeInput , scoring}  from '../helpers/helper'
+import {normalizeInput , scoring}  from '../helpers/helper.js'
 
 // ฟังก์ชันสำหรับการดึงข้อมูลสินค้า
 export const product = async (req, res, next) => {

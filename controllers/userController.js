@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/userModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import User from '../models/userModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
 
 export const registerUser = async (req, res, next) => {
     try {

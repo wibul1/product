@@ -1,5 +1,5 @@
-import Payment from '../models/paymentModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
-import Order from '../models/bookOrderModel'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import Payment from '../models/paymentModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
+import Order from '../models/bookOrderModel.js'; // ใช้ชื่อโมเดลให้ถูกต้อง
 // const {processPayment } = require('../helpers/helper')
 
 export const createPayment = async (req, res, next) => {
