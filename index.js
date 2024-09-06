@@ -1,20 +1,22 @@
 import axios from 'axios';
 import express from 'express';
 import speedInsights from '@vercel/speed-insights';
+import bodyParser from 'body-parser'; // เปลี่ยน require เป็น import
+import cors from 'cors'; // เปลี่ยน require เป็น import
+import dotenv from 'dotenv'; // เปลี่ยน require เป็น import
+dotenv.config(); // ต้องเรียกใช้แบบนี้ใน ES module
 
-const bodyParser = require('body-parser');
-const cors = require('cors');
-require('dotenv').config();
-
-const app = express();
-const { connectToDb } = require('./services/connectdb');
-const port = process.env.PORT;
+// import services
+import { connectToDb } from './services/connectdb.js'; // ใส่ .js ต่อท้ายด้วย
 
 // import routes
-const product = require('./routes/productRoutes'); 
-const user = require('./routes/userRoutes'); 
-const order = require('./routes/orderRoutes'); 
-const payment = require('./routes/paymentRoutes'); 
+import product from './routes/productRoutes.js'; // ใส่ .js ต่อท้ายด้วย
+import user from './routes/userRoutes.js'; 
+import order from './routes/orderRoutes.js'; 
+import payment from './routes/paymentRoutes.js';
+
+const app = express();
+const port = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // ใช้ body-parser เพื่อ parse ข้อมูลที่เข้ามาเป็น JSON
