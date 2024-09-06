@@ -7,10 +7,10 @@ import dotenv from 'dotenv'; // เปลี่ยน require เป็น impor
 dotenv.config(); // ต้องเรียกใช้แบบนี้ใน ES module
 
 // import services
-import { connectToDb } from './services/connectdb.js'; // ใส่ .js ต่อท้ายด้วย
+import { connectToDb } from './services/connectdb.js'; 
 
 // import routes
-import product from './routes/productRoutes.js'; // ใส่ .js ต่อท้ายด้วย
+import product from './routes/productRoutes.js'; 
 import user from './routes/userRoutes.js'; 
 import order from './routes/orderRoutes.js'; 
 import payment from './routes/paymentRoutes.js';
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // ใช้ body-parser เพื่อ parse ข้อมูลที่เข้ามาเป็น JSON
 app.use(cors({ methods: '*' })); // ใช้ CORS เพื่ออนุญาต request จาก domain อื่น
 
-connectToDb(); //เชื่อมต่อ db
+connectToDb(); 
 
 // กำหนด part และเส้นทางของ routes
 app.use('/product', product);
