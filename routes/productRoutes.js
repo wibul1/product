@@ -47,4 +47,4 @@ router.get('/newBook', [
 router.get('/newBookAll', [
 ], controller.newBookAll);
 
-module.exports = router;
+export default router;

@@ -21,4 +21,4 @@ router.post('/loginUser', [
     body('password').notEmpty(),
 ], controller.loginUser);
 
-module.exports = router;
+export default router;

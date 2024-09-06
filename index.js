@@ -10,9 +10,9 @@ dotenv.config(); // ต้องเรียกใช้แบบนี้ใน
 import { connectToDb } from './services/connectdb.js'; 
 
 // import routes
-import product from './routes/productRoutes.js'; 
-import user from './routes/userRoutes.js'; 
-import order from './routes/orderRoutes.js'; 
+import product from './routes/productRoutes.js';
+import user from './routes/userRoutes.js';
+import order from './routes/orderRoutes.js';
 import payment from './routes/paymentRoutes.js';
 
 const app = express();

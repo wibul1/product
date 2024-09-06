@@ -20,4 +20,4 @@ router.post('/deleteOrder', [
     body('idorder').notEmpty(),
 ],  controller.deleteOrder);
 
-module.exports = router;
+export default router;
