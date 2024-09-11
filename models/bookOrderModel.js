@@ -1,22 +1,15 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-// สร้าง ProductSchema
-const ProductSchema = new Schema({
-    name: String,
-    img: String,
-    price: Number,
-});
-
 // สร้าง BookOrderSchema
 const BookOrderSchema = new Schema({
     userId: { 
         type: Schema.Types.ObjectId, 
-        ref: 'User', required: true 
+        ref: 'BookUser', required: true  // เปลี่ยน ref ให้ตรงกับโมเดล BookUser
     },  // อ้างอิงถึง User
     productId: { 
         type: Schema.Types.ObjectId, 
-        ref: 'Product', required: true 
+        ref: 'BookProduct', required: true  // เปลี่ยน ref ให้ตรงกับโมเดล BookProduct
     }, // อ้างอิงถึง Product
     quantity: { 
         type: Number, 
@@ -32,8 +25,9 @@ const BookOrderSchema = new Schema({
     }, // สถานะเริ่มต้นเป็น 'pending'
     create_at: { 
         type: Date, 
-        default: Date.now }
+        default: Date.now 
+    }
 });
 
 // ส่งออกโมเดล bookorders
-export default mongoose.model('bookorders', BookOrderSchema);
+export default mongoose.model('BookOrder', BookOrderSchema);
