@@ -4,7 +4,7 @@ import Order from '../models/bookOrderModel.js'; // ใช้ชื่อโม�
 
 export const createPayment = async (req, res, next) => {
     try {
-        const { userId, orderId, paymentMethod , amount} = req.body;
+        const { userId, orderId, paymentMethod ,quantity, amount} = req.body;
         // console.log(orderId);
         // ดึงข้อมูลออเดอร์ทั้งหมดตาม orderId
         const orders = await Order.find({ _id: { $in: orderId } });
@@ -20,6 +20,7 @@ export const createPayment = async (req, res, next) => {
             userId,
             orderIds: orderId, 
             paymentMethod,
+            quantity:quantity,
             amount: amount, // ใช้จำนวนเงินรวมที่คำนวณได้
             status: 'pending',
             transactionId: 'temp-transaction-id', // ใช้ค่า placeholder สำหรับตอนนี้

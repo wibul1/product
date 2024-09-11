@@ -9,6 +9,7 @@ router.post('/createPayment', [
     body('userId').notEmpty(),
     body('orderId').notEmpty(),
     body('paymentMethod').notEmpty(),
+    body('quantity').notEmpty(),
     body('amount').notEmpty(),
 ], controller.createPayment);
 
