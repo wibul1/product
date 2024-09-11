@@ -20,22 +20,25 @@ export const createOrder = async (req, res, next) => {
         // สร้างและบันทึกออเดอร์ใหม่
         const newOrder = new BookOrder({
             userId,
-            productId: {
-                name: product.name,
-                img: product.img,
-                price: product.price,
-            },
+            productId: product._id, // เก็บเฉพาะ ObjectId ของ product
             quantity,
             sumPrice,
             status: 'pending',
         });
 
         await newOrder.save();
-
-        res.status(201).send({
-            message: 'Order created successfully',
-            data: newOrder,
-        });
+        if(newOrder){
+            res.status(201).send({
+                message: 'Order created successfully',
+                data: newOrder,
+            });
+        } else {
+            res.status(400).send({
+                message: 'Order created fail',
+                data: newOrder,
+            });
+        }
+        
     } catch (error) {
         console.error('Error creating order:', error.message);
         next(error);
