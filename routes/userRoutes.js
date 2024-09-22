@@ -21,4 +21,8 @@ router.post('/loginUser', [
     body('password').notEmpty(),
 ], controller.loginUser);
 
+router.get('/UserId', [
+    query('userId').notEmpty(),
+], controller.GetUserId);
+
 export default router;

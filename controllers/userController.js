@@ -87,3 +87,26 @@ export const loginUser = async (req, res, next) => {
         next(error);
     }
 }
+
+export const GetUserId = async (req, res, next) => {
+    try {
+        const { userId } = req.query;  // รับ userId จาก query parameters
+        console.log(userId)
+        // ค้นหาผู้ใช้ตาม userId
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).send({
+                message: 'User not found',
+            });
+        }
+
+        res.status(200).send({
+            message: 'User fetched successfully',
+            data: user,
+        });
+    } catch (error) {
+        console.error('Error fetching user:', error.message);
+        next(error);
+    }
+};
