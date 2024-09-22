@@ -91,9 +91,10 @@ export const loginUser = async (req, res, next) => {
 export const GetUserId = async (req, res, next) => {
     try {
         const { userId } = req.query;  // รับ userId จาก query parameters
-        console.log(userId)
-        // ค้นหาผู้ใช้ตาม userId
-        const user = await User.findById(userId);
+        console.log(userId);
+
+        // ค้นหาผู้ใช้ตาม userId โดยไม่ดึงฟิลด์ auten
+        const user = await User.findById(userId).select('-auten');
 
         if (!user) {
             return res.status(404).send({
